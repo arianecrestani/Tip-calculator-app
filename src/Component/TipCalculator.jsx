@@ -19,27 +19,11 @@ export default function TipCalculator() {
               <input className="tip-custom" placeholder="CUSTOM" />
             </div>
           </div>
-          <div className="secondSection">
+          <div className="">
             <label>Number of People</label>
             <label className="error">Can't be zero</label>
           </div>
-          <input />
-        </div>
-        <div className="result">
-          <div className="tip-amount">
-            <div className="text">
-              <p>Tip Amount</p>
-              <p className="person">/person</p>
-            </div>
-            <div className="amount">$4.27</div>
-          </div>
-          <div className="total">
-            <div className="text">
-              <p>Tip Amount</p>
-              <p className="person">/person</p>
-            </div>
-            <div className="amount">$4.27</div>
-          </div>
+          <input className="numberPeople" />
         </div>
       </div>
     </div>
