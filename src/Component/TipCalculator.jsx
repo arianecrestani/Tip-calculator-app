@@ -1,6 +1,7 @@
+import TipAmount from "./TipAmount";
 export default function TipCalculator() {
   return (
-    <div>
+    <div className="App">
       <div>
         <img src={require("../images/logo.svg").default} alt="logo" />
       </div>
@@ -26,6 +27,7 @@ export default function TipCalculator() {
           <input className="numberPeople" />
         </div>
       </div>
+
     </div>
   );
 }
