@@ -1,3 +1,4 @@
+import '../App'
 export default function TipAmount() {
   return (
     <div className="result">
