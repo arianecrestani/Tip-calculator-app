@@ -18,7 +18,10 @@ export default function TipCalculator() {
             <div className="tips tip-25">25%</div>
             <div className="tips tip-50">50%</div>
             <div className="tip-custom">
-              <input id="tip-custom" placeholder="CUSTOM" />
+              <input
+                id="tip-custom"
+                placeholder="CUSTOM"
+              />
             </div>
           </div>
           <div className="errorLabel">

@@ -21,6 +21,7 @@
 .sectionOne {
   justify-content: flex-end;
   padding: inherit;
+  display: grid;
 }
 .logo {
   text-align: center;
@@ -37,20 +38,25 @@
 .labelBill {
   color: hsl(186, 14%, 43%);
   font-family: 700;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
 }
-.billInput {
+input {
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 15px;
   padding-right: 48px;
   background-position: 17px 15px;
   background-repeat: no-repeat;
   background-color: hsl(189, 41%, 97%);
 }
+.tip-custom {
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .billInput {
   background-image: url("images/icon-dollar.svg");
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 #tip {
   margin-top: 0.7rem;
@@ -76,14 +82,14 @@
   background-color: hsl(172, 67%, 45%);
   font-weight: bolder;
 }
-/* .numberPeople {
+.numberPeople {
   background-image: url("images/icon-person.svg");
-  margin-bottom: 2.4rem;
-} */
+  margin-bottom: 2rem;
+}
 .result {
   background-color: hsl(183, 100%, 15%);
   color: white;
-  padding: 39px 21px;
+  padding: 39px 35px;
   border-radius: 12px;
 }
 .tip-amount,
@@ -108,7 +114,6 @@
 }
 .error {
   color: red;
-  display: none;
 }
 .amount {
   font-size: 28px;

@@ -17,8 +17,9 @@ export default function TipAmount() {
         <div className="amount" id="total-amount">
           $4.27
         </div>
-        <div className="reset">Reset</div>
       </div>
+
+      <div className="reset">Reset</div>
     </div>
   );
 }
