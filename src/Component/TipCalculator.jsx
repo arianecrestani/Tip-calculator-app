@@ -17,15 +17,15 @@ export default function TipCalculator() {
             <div className="tips tip-15 active-tip">15%</div>
             <div className="tips tip-25">25%</div>
             <div className="tips tip-50">50%</div>
-            <div id="tip-custom">
-              <input className="tip-custom" placeholder="CUSTOM" />
+            <div className="tip-custom">
+              <input id="tip-custom" placeholder="CUSTOM" />
             </div>
           </div>
-          <div className="">
+          <div className="errorLabel">
             <label>Number of People</label>
             <label className="error">Can't be zero</label>
           </div>
-          <input className="numberPeople" id="people-input" />
+          <input className="billInput" id="people-input" />
         </div>
         <TipAmount />
       </div>
