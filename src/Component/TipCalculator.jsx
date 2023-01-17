@@ -6,9 +6,8 @@ export default function TipCalculator() {
   const [bill, setBill] = useState(0);
   const [peopleNumber, setPeopleNumber] = useState(1);
   const [tipPerPerson, setTipPerPerson] = useState(0);
-  const [totalPerPerson, setTotalPerPerson] = useState(0)
-
-  // const [tip, setTip] = useState(0);
+  const [totalPerPerson, setTotalPerPerson] = useState(0);
+  const [tip, setTip] = useState(1.10);
   // const [numberOfPeople, setNumberOfPeople] = useState(0);
 
   const updateValueBill = (e) => {
@@ -19,12 +18,16 @@ export default function TipCalculator() {
     setPeopleNumber(e.target.value);
     handleClick(bill, e.target.value);
   };
-  const updateTipPerson = (e) => {
-    setTipPerPerson(e.target.value);
-  };
+
   const handleClick = (bill, peopleNumber) => {
-    const amount = bill / peopleNumber;
+    let total = bill * tip
+    let totalTip = total - bill
+    const amount = total / peopleNumber
     setTotalPerPerson(amount);
+    const tipPerPerson = totalTip / peopleNumber
+    
+    // let total = (bill * tipAmount) / peopleNumber;
+    setTipPerPerson(tipPerPerson);
   };
   // bill / number of people = amount
 
@@ -77,7 +80,7 @@ export default function TipCalculator() {
               <p>Tip Amount</p>
               <p className="person">/person</p>
             </div>
-            <p className="amount" onChange={updateTipPerson}>
+            <p className="amount">
               {tipPerPerson}
             </p>
           </div>
