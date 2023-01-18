@@ -1,6 +1,7 @@
 import "../App";
 
 import { useState } from "react";
+import { logRoles } from "@testing-library/react";
 
 export default function TipCalculator() {
   const [bill, setBill] = useState(0);
@@ -20,17 +21,31 @@ export default function TipCalculator() {
   };
 
   const handleClick = (bill, peopleNumber) => {
-    let total = bill * tip
-    let totalTip = total - bill
-    const amount = total / peopleNumber
+    let total = bill * tip;
+    let totalTip = total - bill;
+    const amount = total / peopleNumber;
     setTotalPerPerson(amount);
-    const tipPerPerson = totalTip / peopleNumber
-    
+    const tipPerPerson = totalTip / peopleNumber;
+
     // let total = (bill * tipAmount) / peopleNumber;
     setTipPerPerson(tipPerPerson);
   };
   // bill / number of people = amount
-
+  const tipFive = (e) => {
+    setTip(1.05, e.target.value);
+  };
+  const tipTen = (e) => {
+    setTip(1.1, e.target.value);
+  };
+  const tipFiften = (e) => {
+    setTip(1.15, e.target.value);
+  };
+  const tipTwentyFive = (e) => {
+    setTip(1.25, e.target.value);
+  };
+  const fifty = (e) => {
+    setTip(1.5, e.target.value);
+  };
   // 100 / 2 = 50
 
   // 50 + 10% = 55 por person + tip
@@ -52,11 +67,21 @@ export default function TipCalculator() {
           {bill}
           <label>Select Tip %</label>
           <div id="tip">
-            <div className="tips tip-5">5%</div>
-            <div className="tips tip-10">10%</div>
-            <div className="tips tip-15 active-tip">15%</div>
-            <div className="tips tip-25">25%</div>
-            <div className="tips tip-50">50%</div>
+            <div className="tips tip-5" onClick={tipFive}>
+              5%
+            </div>
+            <div className="tips tip-10" onClick={tipTen}>
+              10%
+            </div>
+            <div className="tips tip-15 active-tip" onClick={tipFiften}>
+              15%
+            </div>
+            <div className="tips tip-25" onClick={tipTwentyFive}>
+              25%
+            </div>
+            <div className="tips tip-50" onClick={fifty}>
+              50%
+            </div>
 
             <div className="tip-custom">
               <input id="tip-custom" placeholder="CUSTOM" />
@@ -80,9 +105,7 @@ export default function TipCalculator() {
               <p>Tip Amount</p>
               <p className="person">/person</p>
             </div>
-            <p className="amount">
-              {tipPerPerson}
-            </p>
+            <p className="amount">{tipPerPerson}</p>
           </div>
           <div className="total">
             <div className="text">
